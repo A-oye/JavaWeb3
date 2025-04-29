@@ -20,6 +20,15 @@ pipeline {
             }
         }
 
+        stage('Upload Artifact') {
+            steps {
+                sh '''
+                    cd target
+                    aws s3 cp WebAppCal-*.war s3://proj1-bucket-ay/
+                '''
+            }
+        }
+
         stage('Deploy') {
             steps {
                 echo 'Deploying...'

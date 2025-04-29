@@ -24,7 +24,7 @@ pipeline {
             steps {
                 sh '''
                     cd target
-                    aws s3 cp WebAppCal-*.war s3://proj1-bucket-ay/
+                    aws s3 cp WebAppCal-*.war s3://proj-1-bucket-ay/
                 '''
             }
         }

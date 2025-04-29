@@ -7,20 +7,22 @@ pipeline {
                 checkout scm
             }
         }
-    stages {
+
         stage('Build') {
             steps {
                 sh 'mvn package'
             }
         }
+
         stage('Test') {
-            steps 
+            steps {
                 sh 'mvn test'
             }
         }
+
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Deploying...'
             }
         }
     }
